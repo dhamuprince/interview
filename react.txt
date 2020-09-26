@@ -98,3 +98,7 @@ we can apply only those changes to real DOM instead of replacing entire DOM.
 What is real dom in react JS?
 
 ReactJS does not update the real DOM directly but it updates the Virtual DOM.
+
+what is reactjs?
+React. js is an open-source JavaScript library that is used for building
+user interfaces specifically for single-page applications.
