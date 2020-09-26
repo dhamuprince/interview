@@ -91,6 +91,10 @@ A javascript object that is a "virtual" representation of the real DOM.
 
  “virtual”, representation of a UI is kept in memory and
  synced with the “real” DOM by a library such as ReactDOM. 
- 
+
 By using virtual DOM, we can find out what is changed and with that, 
 we can apply only those changes to real DOM instead of replacing entire DOM.
+
+What is real dom in react JS?
+
+ReactJS does not update the real DOM directly but it updates the Virtual DOM.
