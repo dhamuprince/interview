@@ -1,0 +1,137 @@
+
+diff b/w javascript function and arrow function
+
+
+this” is the keyword in JavaScript which has very
+importance it contains the reference. 
+Reference may be window object or any other custom object 
+depends on the condition.
+
+
+
+why arrow function is return window or global object ?
+Arrow function gets “this” keyword scope from the parent or
+scope from the nearest regular function in which arrow function is defined.
+
+regular function returns a reference to the current JavaScript Object 
+and arrow function returns the reference to the global window object.
+
+
+example
+let language = {
+name: "JavaScript",
+prtLangReg: function (id, language) {
+console.log(this);
+},
+prtLangArrow: (id, language) => { console.log(this); }
+}
+language.prtLangReg();  // ES5 Function Call
+language.prtLangArrow(); // ES6 Function Call
+
+
+
+
+
+ES6 in JavaScript provides us with the arguments Object from which 
+we can select all the parameters passed to the function. 
+But Arrow function does not contain the argument object.
+
+example
+let language = {
+name: "JavaScript",
+prtLangReg: function () {
+console.log(arguments); // 1, JavaScript
+},
+prtLangArrow: () => {
+console.log(arguments); //argument is not defined
+}
+}
+language.prtLangReg(1, "JavaScript");
+language.prtLangArrow(1, "JavaScript");
+
+
+
+
+Regular functions are working well with objects using the new keyword. 
+They have the constructor function by which values can be initialized 
+during object creation.
+It can be managed using the prototype chaining.
+
+let Language = function (name) {
+this.name = name;
+}
+Language.prototype.prtLangReg = function () {
+console.log(this.name);
+}
+let language = new Language("JavaScript");
+language.prtLangReg();
+
+
+
+But arrow function does not have constructor function, prototype chaining. 
+They are not working well with objects. 
+They can not be used with the new keyword for assigning memory.
+
+
+Which one to choose ES5 Regular or ES6 Arrow function?
+
+Arrow function performs well in Callbacks function like 
+setTimeout, Map, Reduce etc. 
+But Regular function performs well with Objects.
+
+
+====================================================
+
+
+
+Do not use an arrow function with the objects. 
+Always used with Higher-Order Function. 
+Choose regular function when you have to work with the objects. 
+Apart from that, arrow function has many 
+other syntax related benefits like implicitly return values, shorter syntax.
+
+-------------------------------------------------
+
+
+
+Basic Syntax of regular vs arrow function
+Without using any parameter:
+
+/***** ES5 Regular Function  *****/
+let prtLangReg = function () {
+console.log("JavaScript");
+}
+prtLangReg();
+
+/***** ES6 Arrow Function  *****/
+let prtLangArrow = _ => {console.log("JavaScript");}
+prtLangArrow();
+
+------------------------------------------
+With one parameter:
+---------------------------------------
+/***** ES5 Regular Function  *****/
+let prtLangReg = function (language) {
+console.log(language);
+}
+prtLangReg("JavaScript");
+
+/***** ES6 Arrow Function  *****/
+let prtLangArrow = (language) => { console.log(language); }
+prtLangArrow("JavaScript");
+----------------------------------------------------
+
+With multiple parameters:
+---------------------------------------
+/***** ES5 Regular Function  *****/
+let prtLangReg = function (id, language) {
+console.log(id + ".) " + language);
+}
+prtLangReg(1, "JavaScript");
+
+/***** ES6 Arrow Function  *****/
+let prtLangArrow = (id, language) => { console.log(id + ".) " + language); }
+prtLangArrow(1, "JavaScript");
+
+
+this is end for arrow function
