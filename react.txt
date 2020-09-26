@@ -1,0 +1,96 @@
+
+this is the story of react and virtual DOM once upon a time there was a view
+he was very happy painting the DOM 
+sometimes the model would give some nice data to paint he knew really well how
+to paint a UI given all the data a username the points and a colored shape
+piece of cake and fun too.
+but then the model sent the view an updated username he had to know how to change
+his painting to show the new username to do that he had to keep track of a 
+username div.username he dutifully updated the DOM directly then the model sent 
+to view another update this time it was the points:72 the view added another
+update rule and started tracking the points dv.points
+
+again he updated  the DOM in place. next the model sent the view a new colored
+if you remembered yet anoterh update rule and kept track of another DOM
+then he changed the color right there on the DOM.
+
+the view thought that might be the end of the upate rules but they just kept 
+adding up he had to keep track of so much  and sometimes the order
+of updates events mattered it was all too much after a while he gave up he 
+couldn't continue.
+
+
+but then the view met a friend, the friend was called react.
+they worked together to paint the DOM
+
+the model would have the view a complete piece of data the view knew how to 
+render this username points and colored shape 
+
+he would draw a quick but accurate sketch then he would bring it to react who
+would scan it react had very accurate and fast memory banks it could remember
+exactly what was already painted  in the REAL DOM
+
+new painting at first the DOM was empty so it knew to paint the whole thing
+ it could paint very fast because it was a robot then whenever the data 
+ may have changed the model gave the view all the data again 
+
+ the view like this because he was really good at sketching an entire picture
+ but not every good at remembering all of those DOM nodes when he was done he 
+ gave it to react who scanned it difference detected blue circle is now red.
+
+ it quickly made a short list of all of the differences that it painted each
+ and every difference but no more when the model would bring him data the view
+ didn't really know what was on the REAL DOM.
+ 
+ and he didn't want to know he just sketched the picture as it was supposed to
+ look then passed it to react react would quickly figure out that there were
+ no differences no differences 
+ everying was already painted correctly the view was so happy with his new
+ friend react
+
+ what makes React so fast ?
+
+ let's say we have a DOM tree like i just shown you the example okay
+
+ so what react will do is the react will make two copies of it 
+
+ and we'll call it VIRTUAL DOM  
+
+ so this will be a virtual representation of the DOM it would create two copies
+ of it
+ now how does it actually work 
+ so whenever anything changes in your application it gets rerender to the virtual
+ representation of the DOM 
+ which means this one so it made one copy so it made two copies and whenever 
+ anything changes it will go ahead and render all the changes to VIRTUAL
+ DOM representation of the one of the copies and then what it's going to do is 
+ going to compare it with the other copy it's not going to compare it with 
+REAL DOM
+
+to compare with other copy of the virtual DOM and it will isolate that change
+so let's this part has changed okay 
+
+and it's going to update the REAL DOM with that change 
+
+
+why is react fast ?
+
+we know they are reading from and writing to the DOM is slow compared to reading
+or writing from a javascript object
+
+now virtual dom is a javascript object so react never reads from the REAL DOM
+what it does is it interacts with the virtual DOM and when it sees the change it
+goes ahead updates the REAL DOM
+
+
+what is react Virtual DOM ?
+
+A javascript object that is a "virtual" representation of the real DOM.
+
+
+
+ “virtual”, representation of a UI is kept in memory and
+ synced with the “real” DOM by a library such as ReactDOM. 
+ 
+By using virtual DOM, we can find out what is changed and with that, 
+we can apply only those changes to real DOM instead of replacing entire DOM.
